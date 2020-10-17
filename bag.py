@@ -112,6 +112,7 @@ class Bag:
         return False
 
     def get_bag_page(self, article, url, debug, creds, proxy_pass):
+        url = 'https://www.wildberries.ru' + url
         self.set_bag_fields(article, url, debug, creds, proxy_pass)
         timeout = round(random.random() * int(creds[4]), 1)
         if debug:

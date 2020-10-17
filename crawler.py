@@ -133,7 +133,8 @@ if __name__ == '__main__':
         else:
             main_soup = BeautifulSoup(main_html, 'html.parser')
             try:
-                items = main_soup.find('span', class_="total many").find('span').text
+                goods_count = main_soup.find('span', class_="goods-count").text
+                items = int(''.join(list(filter(str.isdigit, goods_count))))
             except AttributeError:
                 print("Bad first page. Try to run again.")
                 sys.exit(0)

@@ -14,7 +14,7 @@ class Table:
 
     @staticmethod
     def get_table_connect(creds: tuple):
-        cnx = mysql.connector.connect(user=creds[0], password=creds[1], host=creds[2], database=creds[3])
+        cnx = mysql.connector.connect(user=creds[0], password=creds[1], host=creds[2], database=creds[3], port=3333)
         cursor = cnx.cursor(buffered=True)
         return cnx, cursor
 
